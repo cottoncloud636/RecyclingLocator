@@ -4,13 +4,13 @@
 
 
 
-const products = [
+const materials = [
   {
     id: 1,
-    name: 'Ultimate Pepperoni',
+    name: 'Copper',
     image:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/peperoni.png',
-    price: 12.99,
+      'https://1drv.ms/i/c/7a7b868a35d5cb38/IQOEWAS_OrKtRJxFITuvtBo3ATU4uOYDD6jCko8Fy8GD0Z8?width=967&height=950',
+    price: 3.94,
   },
   {
     id: 2,
@@ -77,4 +77,4 @@ const products = [
   },
 ];
 
-export default products;
+export default materials;

@@ -1,31 +1,46 @@
-import { StyleSheet } from 'react-native';
+import Colors from '@/src/constants/Colors';
+import { StyleSheet, Text, View, Image } from 'react-native'; 
+import materials from '../../../assets/data/materials';
 
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+// import EditScreenInfo from '../../components/EditScreenInfo';
+// import { Text, View } from '../../components/Themed';
+
+const material = materials[0];
+// const imageSource = require(material.image); --error: cuz require is for static image, it can't
+                                     // dynamically retrieve "material.image" during compilation time 
+
+/*use require func to specify image source */
 
 export default function TabOneScreen() {
   return (
+
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One, Hello World</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <Image source={{uri: material.image}} style={styles.image}/> 
+      <Text style={styles.title}>{material.name}</Text>
+      <Text style={styles.price}>${material.price}/LB</Text>
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+  //for the entire container's general style
+  container: { 
+    backgroundColor: 'white',
+    padding: 15,
+  },
+  image: {
+    width: '20%', //relative size, change based on the screen size 
+    aspectRatio: 1, // 1: a square picture, 1/2: width is half of the height.
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+
+  price: {
+    color: Colors.light.green,
+    fontWeight: '700',
+    fontStyle: 'italic',
+  }
 });

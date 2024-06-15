@@ -1,13 +1,15 @@
 const tintColorLight = '#2f95dc';
 const tintColorDark = '#fff';
+const fernGreen = '#357D3F';
 
 export default {
   light: {
-    text: '#000',
-    background: '#fff',
+    text: '#000', //black
+    background: '#fff', //white
     tint: tintColorLight,
-    tabIconDefault: '#ccc',
+    tabIconDefault: '#ccc', //light gray
     tabIconSelected: tintColorLight,
+    green: fernGreen,
   },
   dark: {
     text: '#fff',
@@ -15,5 +17,6 @@ export default {
     tint: tintColorDark,
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
+    green: fernGreen,
   },
 };
