@@ -14,10 +14,10 @@ const materials = [
   },
   {
     id: 2,
-    name: 'ExtravaganZZa',
+    name: 'Steel',
     image:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/extravaganzza.png',
-    price: 14.99,
+      'https://1drv.ms/i/c/7a7b868a35d5cb38/IQNyh-eNBOvqSqn2nVNNZsOIAZhQ9N96E9rbKWTE7fCHcKA?width=1024',
+    price: 180.08,
   },
   {
     id: 3,
