@@ -4,7 +4,7 @@
 
 
 
-import { Order } from '../../src/types';
+import { Order } from '../../src/datatypes';
 import products from './materials';
 import dayjs from 'dayjs';
 
