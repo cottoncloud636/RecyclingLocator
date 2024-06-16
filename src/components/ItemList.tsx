@@ -1,4 +1,4 @@
-import Colors from '@/src/constants/Colors';
+import Colors from '@/constants/Colors';
 import { StyleSheet, Text, View, Image } from 'react-native'; 
 import {Item} from '../datatypes';
 
@@ -23,7 +23,7 @@ const ItemList = ({material}: ItemListProps) => {
     <View style={styles.container}>
       <Image source={{uri: material.image|| defaultImg}} style={styles.image}/> 
       <Text style={styles.title}>{material.name}</Text>
-      <Text style={styles.price}>${material.price}/LB</Text>
+      <Text style={styles.price}>${material.price} / {material.measure}</Text>
     </View>
   );
 };
@@ -35,9 +35,11 @@ const styles = StyleSheet.create({
   container: { 
     backgroundColor: 'white',
     padding: 15,
+    flex: 1, //split parent column space evenly between sibling. Hence, if last item is listed by itself, it will
+    maxWidth: '50%', // take up the entire space, hence using maxWidth can restrict that. 
   },
   image: {
-    width: '20%', //relative size, change based on the screen size 
+    width: '45%', //relative size, change based on the screen size 
     aspectRatio: 1, // 1: a square picture, 1/2: width is half of the height.
   },
   title: {

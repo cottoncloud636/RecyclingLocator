@@ -3,6 +3,7 @@ export type Item = {
   image: string | null;
   name: string;
   price: number;
+  measure: string;
 };
 
 export type PizzaSize = 'S' | 'M' | 'L' | 'XL';
