@@ -1,6 +1,7 @@
 import Colors from '@/constants/Colors';
-import { StyleSheet, Text, View, Image } from 'react-native'; 
+import { StyleSheet, Text, View, Image, Pressable} from 'react-native'; 
 import {Item} from '../datatypes';
+import { Link } from 'expo-router'; 
 
 // import EditScreenInfo from '../../components/EditScreenInfo';
 // import { Text, View } from '../../components/Themed';
@@ -18,13 +19,23 @@ type ItemListProps = {// denote: the ItemListProps type is equal to an obj.
 
 const ItemList = ({material}: ItemListProps) => {
   console.log(material);
-
+/* 1) /Material: -- for static route only!! "Material" is the same as as Matrial.tsx file 
+   2) <Pressable> is the same as <View>, except <View> doesn't have press event, where I can press a text or image
+   3) The route /Metal/${material.id} should closely related with the folder structure. Here we want
+   display each item's detail based on their id, hence id is an identifier of an item. So we need to
+   find this [id].tsx file, which is under "Metal" folder, hence we need to add this /Metal/ route
+   so that it will find this [id].tsx file. Noted: the folder name with "()" around is an optional
+   route, hence (tabs) didn't include in the route. 
+*/
   return (
-    <View style={styles.container}>
-      <Image source={{uri: material.image|| defaultImg}} style={styles.image}/> 
-      <Text style={styles.title}>{material.name}</Text>
-      <Text style={styles.price}>${material.price} / {material.measure}</Text>
-    </View>
+    <Link href={`/Metal/${material.id}`} asChild>  
+      <Pressable style={styles.container}>
+        <Image source={{uri: material.image|| defaultImg}} style={styles.image}/> 
+        <Text style={styles.title}>{material.name}</Text>
+        <Text style={styles.price}>${material.price} / {material.measure}</Text>
+        
+      </Pressable>
+    </Link>
   );
 };
 
