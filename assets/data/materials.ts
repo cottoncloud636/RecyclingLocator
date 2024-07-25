@@ -1,17 +1,21 @@
-/*??????????????????? dummy order data 
-
-?????????????????????*/
-
-
-
 const materials = [
   {
     id: 1,
     name: 'Alternator',
     image:
-      'https://1drv.ms/i/c/7a7b868a35d5cb38/IQPBuYN3dcyuQLm7h1duPx7aAbkFrQsNQ-sl2uvtxgc7i4Q?width=947&height=945',
+    'https://1drv.ms/i/c/7a7b868a35d5cb38/IQPBuYN3dcyuQLm7h1duPx7aAbkFrQsNQ-sl2uvtxgc7i4Q?width=256',
     price: 0.36,
     measure: 'lb',
+    description: 'An alternator is an electrical generator that converts mechanical energy to electrical energy in the form of alternating current.',
+    bulletPoints: [
+      'Copper Windings',
+      'Steel',
+      'Aluminum Housing',
+      'Bearings',
+      'electronic components',
+      'plastic parts',
+      'rubber'
+    ],
   },
   {
     id: 2,
@@ -20,6 +24,9 @@ const materials = [
       'https://1drv.ms/i/c/7a7b868a35d5cb38/IQOZLmxLvAprSIYBen8lawzZAW8NrBaKF6R8-beo5WCBx6g?width=1262&height=852',
     price: 1.09,
     measure: 'lb',
+    description: 'An aluminum can is a single used container mainly used on beverages. Very commonly seen in daily life',
+    education: ''
+
   },
   {
     id: 3,
