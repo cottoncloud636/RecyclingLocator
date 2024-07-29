@@ -6,7 +6,7 @@ const materials = [
     'https://1drv.ms/i/c/7a7b868a35d5cb38/IQPBuYN3dcyuQLm7h1duPx7aAbkFrQsNQ-sl2uvtxgc7i4Q?width=256',
     price: 0.36,
     measure: 'lb',
-    description: 'An alternator is an electrical generator that converts mechanical energy to electrical energy in the form of alternating current.',
+    description: "An alternator is a critical component in a vehicle's electrical system, responsible for converting mechanical energy into electrical energy to charge the battery and power the electrical system while the engine is running. When an alternator reaches the end of its useful life and is set to be scrapped, it can be a valuable source of recyclable materials.",
     bulletPoints: [
       'Copper Windings',
       'Steel',
@@ -54,17 +54,17 @@ const materials = [
   },
   {
     id: 6,
-    name: 'Brass Shell',
+    name: 'Brass Raditor',
     image:
-      'https://1drv.ms/i/c/7a7b868a35d5cb38/IQP5qowU9hU8TaK4ECFMOkkBAVrMXdWiwejZW4MSAT7NisI?width=1275&height=962',
+      'https://1drv.ms/i/c/7a7b868a35d5cb38/IQNTZQsXvBPKSYXTVT6fy_idAVq88-DE0jf6P-r0-e6Ylus?width=1024',
     price: 1.91,
     measure: 'lb',
   },
   {
     id: 7,
-    name: 'Cast Iron',
+    name: 'Zinc Die Cast',
     image:
-      'https://1drv.ms/i/c/7a7b868a35d5cb38/IQOQhJAnqBPwQ6rpHKMEASCFAY2uz4-qiqdeu_-62jW95Tg?width=1170&height=950',
+      'https://1drv.ms/i/c/7a7b868a35d5cb38/IQOCujfdwu3pTI5CZvrO0P6oAcMXUZ_WrrRhjk7ZS3nsaYM?width=1024',
     price: 228.19,
     measure: 'ton',
   },
@@ -78,9 +78,9 @@ const materials = [
   },
   {
     id: 9,
-    name: 'Flashing Copper',
+    name: 'Copper wire',
     image:
-      'https://1drv.ms/i/c/7a7b868a35d5cb38/IQOiKqI10rX4Qrsd2OLVggcyAQc9_sNxLdetWR4rsNOjrF4?width=1320&height=945',
+      'https://1drv.ms/i/c/7a7b868a35d5cb38/IQNVCveqW8f9RpuUAIo8V5KVASE3Yr5kBUA0Ta-SIUOOR9M?width=1024',
     price: 2.83,
     measure: 'lb',
   },

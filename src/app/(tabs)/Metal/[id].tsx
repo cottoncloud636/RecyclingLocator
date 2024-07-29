@@ -1,11 +1,12 @@
 import { Stack, useLocalSearchParams } from 'expo-router';
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native'; 
+import { View, Text, StyleSheet, Image, Dimensions} from 'react-native'; 
 import materials from '@assets/data/materials';
 import { defaultImg } from '@/components/ItemList';
 import { green } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
+import Button from '@/components/Button';
 
 const {width, height} = Dimensions.get('window');
-
+const material = materials[0]
 
 const MaterialDetail = () =>{
   /* Used a custom hook useLocalSearchParams to extract the id parameter from the local search parameters 
@@ -15,6 +16,10 @@ const MaterialDetail = () =>{
   //after enter this detailed item page, dynamically show item name as the page title
   const material = materials.find(m => m.id.toString() === id); //==="id": this id is from the hook
 
+  const addToMyRecycleList = ()=>{
+    if (!material) return;
+    alert("add to cart");
+  };
 
   /* 1) ?.: optional chaining operator, if material is null or undefined would result in a runtime error
   material?.name will safely return undefined instead of causing an error. 
@@ -39,7 +44,7 @@ const MaterialDetail = () =>{
             </View>
         ))}
       </View>
-
+      <Button onPress={addToMyRecycleList} text="Add to my recycling list" />
     </View>
   );
 };
