@@ -1,8 +1,8 @@
 import { Stack, useLocalSearchParams } from 'expo-router';
-import { View, Text, StyleSheet, Image, Dimensions} from 'react-native'; 
+import {ScrollView, View, Text, StyleSheet, Image, Dimensions} from 'react-native'; 
 import materials from '@assets/data/materials';
 import { defaultImg } from '@/components/ItemList';
-import { green } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
+// import { green } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
 import Button from '@/components/Button';
 
 const {width, height} = Dimensions.get('window');
@@ -27,29 +27,36 @@ const MaterialDetail = () =>{
       index -- The index of the current element being processed in the array.
   */
   return(
-    <View style={styles.container}>
-        <Stack.Screen options={{title: material?.name} }/>
-        <View style={styles.topHalf}>
-          <Image source={{uri: material?.image || defaultImg}} style={styles.image}/>
-          <View style={styles.descContainer}>
-            <Text style={styles.desc}>{material?.description}</Text>
-          </View>
-        </View>
-        <Text style={styles.price}>Current Price: ${material?.price} / {material?.measure}</Text>
-        <Text style={styles.opening} >Parts and materials can be recycled from an Alternator are:</Text>
-        <View style={styles.bpContainer}> 
-          {material?.bulletPoints?.map((point, index) => (
-            <View key={index} style={styles.bulletPoint}>
-              <Text style={styles.bulletPointText}>⭐ {point}</Text>
+    <ScrollView contentContainerStyle={styles.scrollViewContent}>
+      <View style={styles.container}>
+          <Stack.Screen options={{title: material?.name} }/>
+          <View style={styles.topHalf}>
+            <Image source={{uri: material?.image || defaultImg}} style={styles.image}/>
+            <View style={styles.descContainer}>
+              <Text style={styles.desc}>{material?.description}</Text>
             </View>
-        ))}
+          </View>
+          <Text style={styles.price}>Current Price: ${material?.price} / {material?.measure}</Text>
+          <Text style={styles.opening} >Parts and materials can be recycled from an Alternator are:</Text>
+          <View style={styles.bpContainer}> 
+            {material?.bulletPoints?.map((point, index) => (
+              <View key={index} style={styles.bulletPoint}>
+                <Text style={styles.bulletPointText}>⭐ {point}</Text>
+              </View>
+          ))}
+        </View>
+        <Button onPress={addToMyRecycleList} text="Add to my recycling list" />
       </View>
-      <Button onPress={addToMyRecycleList} text="Add to my recycling list" />
-    </View>
+  </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  scrollViewContent: {
+    flexGrow: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
   container: {
     backgroundColor: "azure",
     flex: 1,//any background effect will be applied to the entire background
